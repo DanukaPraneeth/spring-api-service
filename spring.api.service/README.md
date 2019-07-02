@@ -33,7 +33,9 @@ java -jar target/com.spring.api.service-1.0-SNAPSHOT.jar
 
 - Below sample request are for the default port in local server. You may change the domain name and port depending on your requirement
 
-###Sample requests:
+- This service is using **h2 in-memory database** to store the API request information. So all the api request related data will be lost once the service is stopped
+
+### Sample requests:
 
 #### Get Person Details
 
@@ -112,14 +114,14 @@ Update operation can only be done for one person with a single request
     }'
 ```
 
-Delete Existing Person Record
+#### Delete Existing Person Record
 
 ##### * Delete a single person
 
 ```
     curl -X DELETE \
       'http://localhost:8080/v1/delete/persons?first_name={name_1}&last_name={name_2}' \
-      -H 'Authorization: Basic YWRtaW46cm9vdEAxMjM' 
+      -H 'Authorization: Basic YWRtaW46cm9vdEAxMjM'
 ```
 
 ##### * Delete all persons
